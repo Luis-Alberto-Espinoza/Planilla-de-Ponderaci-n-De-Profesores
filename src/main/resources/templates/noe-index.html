@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>Formulario de Puntaje para Docentes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo App</title>
+    <link href="/vendor/bootstrap/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+    	<img class="header-logo" src="https://cdn.domestika.org/c_pad,dpr_auto,f_auto,h_150,q_auto,w_150/v1477945609/school-logos/000/000/314/314-original.png?1477945609" alt="Logo"> <!-- Logo IES MB -->
+    	<button class= "header-btn" onclick="alert('Botón 1 clickeado')">Botón 1</button>
+    	<button class= "header-btn" onclick="alert('Botón 2 clickeado')">Botón 2</button>
+    	<button class= "header-btn" onclick="alert('Botón 3 clickeado')">Botón 3</button>
+	</header>
+    <h1>Formulario de Puntaje para Docentes</h1>
+    <form id="puntajeForm">
+        <!-- Categoría A -->
+        <div class="categoria">
+            <h2>A. TÍTULO (máx. 16 pts.)</h2>
+            <label>Profesor de grado universitario y/o Profesor de nivel Superior de 4 años o más (16 puntos por cada título):</label>
+            <input type="number" name="titulo1" value="0">
+            <label>Profesional universitario de 4 años o más y certificación de formación pedagógica (16 puntos por cada título):</label>
+            <input type="number" name="titulo2" value="0">
+            <label>Profesional de 4 años SIN certificación de formación pedagógica (12 puntos por cada título):</label>
+            <input type="number" name="titulo3" value="0">
+            <label>Técnico de Nivel Superior y Formación docente (Técnico de 3 o mas años) (10 puntos por cada título):</label>
+            <input type="number" name="titulo4" value="0">
+            <label>Técnico de Nivel Superior (Técnico de 3 o mas años) (8 puntos cada uno):</label>
+            <input type="number" name="titulo5" value="0">
+        </div>
+
+        <!-- Categoría B -->
+        <div class="categoria">
+            <h2>B. FORMACIÓN POSTERIOR AL TÍTULO DE BASE (hasta 6 pts.)</h2>
+            <label>Diplomatura / Postítulo / Actualización académica (1 punto por cada uno):</label>
+            <input type="number" name="formacion1" value="0" min="0">
+            <label>Especialización (2 puntos cada una):</label>
+            <input type="number" name="formacion2" value="0" min="0">
+            <label>Licenciatura (3 puntos cada una):</label>
+            <input type="number" name="formacion3" value="0" min="0">
+            <label>Maestría (4 puntos cada una):</label>
+            <input type="number" name="formacion4" value="0" min="0">
+            <label>Doctorado (6 puntos cada una):</label>
+            <input type="number" name="formacion5" value="0" min="0">
+        </div>
+
+        <!-- Categoría C -->
+        <div class="categoria">
+            <h2>C. ANTIGÜEDAD DOCENTE (hasta 15 pts. como total acumulable)</h2>
+            <label>Total en la docencia - 0,5 pts. por año:</label>
+            <input type="number" name="antiguedad1" value="0" min="0">
+            <label>En el Nivel Superior - 0,7 pts. por año o fracción no menor a 6 meses:</label>
+            <input type="number" name="antiguedad2" value="0" min="0">
+            <label>En la Institución - 1 pts. por año o fracción no menor a 6 meses:</label>
+            <input type="number" name="antiguedad3" value="0" min="0">
+        </div>
+
+        <!-- Categoría D -->
+        <div class="categoria">
+            <h2>D. PARTICIPACION EN EVENTOS ACADÉMICOS TALES COMO CONGRESOS, JORNADAS, SIMPOSIOS, ENCUENTROS CIENTIFICOS, ETC. (hasta 5 pts.)</h2>
+            <label>Asistente (0,05 puntos por encuentro):</label>
+            <input type="number" name="eventos1" value="0" min="0">
+            <label>Asistente con evaluación (0,10 puntos por encuentro):</label>
+            <input type="number" name="eventos2" value="0" min="0">
+            <label>Moderador (0,15 puntos por encuentro):</label>
+            <input type="number" name="eventos3" value="0" min="0">
+            <label>Miembro de jurado para feria de ciencias o similares, olimpiadas provinciales, regionales, nacionales o internacionales (0,10 puntos por encuentro):</label>
+            <input type="number" name="eventos4" value="0" min="0">
+            <label>Coordinador general (0,30 puntos por encuentro):</label>
+            <input type="number" name="eventos5" value="0" min="0">
+            <label>Miembro de comité académico (0,20 puntos por encuentro):</label>
+            <input type="number" name="eventos6" value="0" min="0">
+            <label>Expositor (0,50 puntos por encuentro):</label>
+            <input type="number" name="eventos7" value="0" min="0">
+            <label>Asesor o tutor de grupo para feria de ciencias o similares, olimpiadas provinciales, regionales, nacionales o internacionales para el nivel superior (0,15 puntos por encuentro):</label>
+            <input type="number" name="eventos8" value="0" min="0">
+        </div>
+
+        <!-- Categoría E -->
+<div class="categoria">
+    <h2>E. ELABORACION Y DICTADO DE CURSOS, JORNADAS, TALLERES, SEMINARIOS, ETC, AFINES AL NIVEL O FUNCION PARA LA QUE SE POSTULA, CON RECONOCIMIENTO DE ORGANISMOS OFICIALES (hasta 12 pts.)</h2>
+    <label>Curso de 6 a 12 hs cátedras - Elaboración (0,25 por curso):</label>
+    <input type="number" name="elaboracion1" value="0" min="0">
+    <label>Curso de 6 a 12 hs cátedras - Dictado (0,25 por curso):</label>
+    <input type="number" name="dictado1" value="0" min="0">
+    <label>Curso de 13 a 24 hs cátedra - Elaboración (0,50 por curso):</label>
+    <input type="number" name="elaboracion2" value="0" min="0">
+    <label>Curso de 13 a 24 hs cátedra - Dictado (0,50 por curso):</label>
+    <input type="number" name="dictado2" value="0" min="0">
+    <label>Curso de 25 a 40 hs cátedra - Elaboración (0,60 por curso):</label>
+    <input type="number" name="elaboracion3" value="0" min="0">
+    <label>Curso de 25 a 40 hs cátedra - Dictado (0,60 por curso):</label>
+    <input type="number" name="dictado3" value="0" min="0">
+    <label>Curso de 41 a 60 hs cátedra - Elaboración (0,70 por curso):</label>
+    <input type="number" name="elaboracion4" value="0" min="0">
+    <label>Curso de 41 a 60 hs cátedra - Dictado (0,70 por curso):</label>
+    <input type="number" name="dictado4" value="0" min="0">
+    <label>Curso de 61 a 100 hs cátedra - Dictado (0,70 por curso):</label>
+    <input type="number" name="dictado5" value="0" min="0">
+    <label>Postítulo - Elaboración (1,20 por curso):</label>
+    <input type="number" name="elaboracion5" value="0" min="0">
+    <label>Postítulo - Dictado (1,20 por curso):</label>
+    <input type="number" name="dictado6" value="0" min="0">
+</div>
+
+<!-- Categoría F -->
+<div class="categoria">
+    <h2>F. TRABAJOS DE INSVESTIGACION (hasta 6 pts.)</h2>
+    <label>Director o Co-director (0,50 por trabajo):</label>
+    <input type="number" name="investigacion1" value="0" min="0">
+    <label>Investigador (0,30 por trabajo):</label>
+    <input type="number" name="investigacion2" value="0" min="0">
+    <label>Ayudante de Investigación (0,10 por trabajo):</label>
+    <input type="number" name="investigacion3" value="0" min="0">
+    <label>Director de tesina o trabajos finales de carrera de grado (0,30 por trabajo):</label>
+    <input type="number" name="investigacion4" value="0" min="0">
+    <label>Director de tesis de postgrado (0,50 por trabajo):</label>
+    <input type="number" name="investigacion5" value="0" min="0">
+    <label>Jurado de tesis o tesina (0,20 por trabajo):</label>
+    <input type="number" name="investigacion6" value="0" min="0">
+</div>
+
+<!-- Categoría G -->
+<div class="categoria">
+    <h2>G. PUBLICACIONES VINCULADAS CON LA EDUCACION O CON LA FUNCION A LA QUE SE POSTULA (hasta 12 pts.)</h2>
+    <label>Libro AUTOR (2,00 por publicación):</label>
+    <input type="number" name="publicaciones1" value="0" min="0">
+    <label>Libro CO-AUTOR (1,50 por publicación):</label>
+    <input type="number" name="publicaciones2" value="0" min="0">
+    <label>Libro COMPILADOR (1,00 por publicación):</label>
+    <input type="number" name="publicaciones3" value="0" min="0">
+    <label>Capítulo de Libro y/o artículo en revista especializada con referato - AUTOR (1,00 por publicación):</label>
+    <input type="number" name="publicaciones4" value="0" min="0">
+    <label>Capítulo de Libro y/o artículo en revista especializada sin referato - CO-AUTOR (0,50 por publicación):</label>
+    <input type="number" name="publicaciones5" value="0" min="0">
+    <label>Cuadernillo, fascículo curricular, separata - AUTOR (0,50 por publicación):</label>
+    <input type="number" name="publicaciones6" value="0" min="0">
+    <label>Cuadernillo, fascículo curricular, separata - CO-AUTOR (0,30 por publicación):</label>
+    <input type="number" name="publicaciones7" value="0" min="0">
+    <label>Artículo en Revista especializada sin referato - AUTOR (0,30 por publicación):</label>
+    <input type="number" name="publicaciones8" value="0" min="0">
+    <label>Artículo en Revista especializada sin referato - CO-AUTOR (0,20 por publicación):</label>
+    <input type="number" name="publicaciones9" value="0" min="0">
+    <label>Otros artículos - AUTOR (0,10 por publicación):</label>
+    <input type="number" name="publicaciones10" value="0" min="0">
+    <label>Otros artículos - CO-AUTOR (0,05 por publicación):</label>
+    <input type="number" name="publicaciones11" value="0" min="0">
+</div>
+
+<!-- Categoría H -->
+<div class="categoria">
+    <h2>H. ASISTENCIA A CURSOS, SEMINARIOS Y TALLERES AFINES AL NIVEL SUPERIOR O FUNCION PARA LA QUE SE POSTULA, CON RECONOCIMIENTO DE ORGANISMOS OFICIALES (hasta 8 pts.)</h2>
+    <label>Entre 12 y 23 hs - Sin evaluación (0,05 por cada uno):</label>
+    <input type="number" name="cursos1" value="0" min="0">
+    <label>Entre 12 y 23 hs - Con evaluación (0,10 por cada uno):</label>
+    <input type="number" name="cursos2" value="0" min="0">
+    <label>Entre 24 y 40 hs - Sin evaluación (0,10 por cada uno):</label>
+    <input type="number" name="cursos3" value="0" min="0">
+    <label>Entre 24 y 40 hs - Con evaluación (0,20 por cada uno):</label>
+    <input type="number" name="cursos4" value="0" min="0">
+    <label>Entre 41 y 60 hs - Sin evaluación (0,15 por cada uno):</label>
+    <input type="number" name="cursos5" value="0" min="0">
+    <label>Entre 41 y 60 hs - Con evaluación (0,30 por cada uno):</label>
+    <input type="number" name="cursos6" value="0" min="0">
+    <label>Entre 61 y 80 hs - Sin evaluación (0,20 por cada uno):</label>
+    <input type="number" name="cursos7" value="0" min="0">
+    <label>Entre 61 y 80 hs - Con evaluación (0,40 por cada uno):</label>
+    <input type="number" name="cursos8" value="0" min="0">
+    <label>Entre 81 y 100 hs - Sin evaluación (0,25 por cada uno):</label>
+    <input type="number" name="cursos9" value="0" min="0">
+    <label>Entre 81 y 100 hs - Con evaluación (0,50 por cada uno):</label>
+    <input type="number" name="cursos10" value="0" min="0">
+    <label>Más de 100 hs - Sin evaluación (0,30 por cada uno):</label>
+    <input type="number" name="cursos11" value="0" min="0">
+    <label>Más de 100 hs - Con evaluación (0,60 por cada uno):</label>
+    <input type="number" name="cursos12" value="0">
+</div>
+
+<!-- Categoría I -->
+<div class="categoria">
+    <h2>I. OTROS DESEMPEÑOS LABORALES EN EL AMBITO PRIVADO (hasta 5 pts.)</h2>
+    <label>Solo para Coordinadores de Carreras Técnicas (5,00):</label>
+    <input type="number" name="otros1" value="0" min="0">
+</div>
+
+<!-- Categoría J -->
+<div class="categoria">
+    <h2>J. CARGOS DE CONDUCCION Y/O GESTION EN EL NIVEL SUPERIOR (hasta 10 pts.)</h2>
+    <label>Rector (3,00 puntos en IES - 1,50 en otras instituciones):</label>
+    <input type="number" name="cargos1" value="0" min="0">
+    <label>Vicerrector/Director de nivel/Regente (2,50 puntos en IES - 1,75 en otras instituciones):</label>
+    <input type="number" name="cargos2" value="0" min="0">
+    <label>Jefatura 2,00 puntos en IES - (1,00 en otras instituciones):</label>
+    <input type="number" name="cargos3" value="0" min="0">
+    <label>Coordinación 1,50 puntos en IES - (1,00 en otras instituciones):</label>
+    <input type="number" name="cargos4" value="0" min="0">
+    <label>Miembro de Consejo Directivo 1,00 puntos en IES - (0,50 en otras instituciones):</label>
+    <input type="number" name="cargos5" value="0" min="0">
+</div>
+
+<!-- Categoría K -->
+<div id="categoriaK" class="categoria">
+    <div class="categoria-header">K. OTRAS ACTIVIDADES Y/O CARGOS PERTINENTES A LA FUNCION PARA LA QUE SE POSTULA (hasta 10 pts.)</div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Miembro de equipo técnico de organismos e instituciones oficiales (1,50 por cada equipo)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Cargo docente en el nivel superior universitario (1,50 por cada cargo)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Miembro de equipo evaluador en organismos e instituciones oficiales (1,50 por cada equipo)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Miembro de Consejo Provinciales, relacionados con la educación (1,50 por cada equipo)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Cargo de Gestión Pública (gobierno nacional, provincial, municipal) relacionados con la Educación (1,50 por cargo)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Trabajo en equipos Jurisdiccionales de desarrollo curricular (1,50 por equipo)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Otros cargos o desempeños relacionados con la educación (considerar becas e intercambios internacionales) (1,00 por cargo)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+</div>
+
+<div id="categoriaL" class="categoria">
+    <div class="categoria-header">L. DESEMPEÑOS LABORALES ESPECÍFICOS RELACIONADOS AL ESPACIO CURRICULAR (hasta 30 pts.)</div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Desarrollador de software independiente últimos 5 años - Presentar los proyectos realizados - (asignar hasta 5 pts., se calcula como máximo 2 por año y proyecto) (10 puntos)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Capacitador equipos de desarrollo en empresas del medio últimos 5 años (asignar 2 pts. por año) (10 puntos)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+    <div class="categoria-actividad">
+        <div class="actividad-descripcion">Desarrollador de software últimos 5 años (asignar 2 pts. por año) (10 puntos)</div>
+        <input type="number" class="actividad-puntaje" min="0">
+    </div>
+</div>
+
+        <input type="submit" value="Calcular Puntaje Total">
+    </form>
+
+    <p>Total Puntaje: <span id="totalPuntaje">0</span></p>
+
+    <script src="../static/js/formulario.js"></script>
+</body>
+</html>

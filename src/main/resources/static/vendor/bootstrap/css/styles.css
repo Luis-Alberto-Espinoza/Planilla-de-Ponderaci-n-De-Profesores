@@ -1,0 +1,80 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #007bff;
+}
+
+header {
+    background-color: #00CED1;
+    padding: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    max-width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.header-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+form {
+    margin-bottom: 20px;
+}
+
+.categoria {
+    margin-bottom: 30px;
+}
+
+.categoria h2 {
+    color: #28a745;
+}
+
+.categoria label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.categoria input {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.categoria-header {
+    background-color: #ffc107;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.categoria-actividad {
+    margin-bottom: 10px;
+}
+
+.actividad-descripcion {
+    font-weight: bold;
+}
+
+.actividad-puntaje {
+    width: 60px;
+    margin-left: 10px;
+}
+
+#totalPuntaje {
+    font-weight: bold;
+    color: #dc3545;
+}

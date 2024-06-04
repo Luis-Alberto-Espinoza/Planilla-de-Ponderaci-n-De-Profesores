@@ -1,0 +1,41 @@
+.mayus{
+	text-transform: capitalize;
+}
+.mayustt{
+	text-transform: uppercase;
+}
+input[type=number]::-webkit-outer-spin-button,
+
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+
+
+
+input[type=number] {
+
+    -moz-appearance:textfield;
+
+}
+
+
+            .table-hover tbody tr:hover {
+            background-color: #b1ffff;
+        }
+
+
+        .align-right {
+            text-align: right;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        /* Estilos personalizados */
+        input.error {
+            border: 1px solid red;
+            background-color: #ffe6e6; /* Color de fondo rojo claro */
+        }

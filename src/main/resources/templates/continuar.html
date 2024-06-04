@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>continuar</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/css/one-page-wonder.min.css" rel="stylesheet">
+    <link href="/css/general-styles.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<nav th:replace="~{/components/cancel-nav}"></nav>
+
+<section style= "margin: 110px">
+    <div class="container" id= "success-continue">
+		<h1>Cambio aplicado</h1><br>
+        <div class="row align-items-center">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+                <tr>
+                    <td th:text="${profesor.id}"></td>
+                    <td th:text="${profesor.nombre}"></td>
+                    <td th:text="${profesor.apellido}"></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre de las actividades que faltan modificar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${porModificar}">
+                    <td scope="row" th:text="'# '+ ${item}"></td>
+                </tr>
+                <tr style="background-color: #ffffff;">
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <form th:action="@{'/categorias_p/' + ${profesorId}}" method="post">
+            <input type="hidden" name="profesorId" th:value="${profesorId}"/>
+            <input type="hidden" name="strCategoriasSeleccionadas" th:value="${strCategoriasSeleccionadas}"/>
+            <button type="submit" class="ok">Continuar</button>
+        </form>
+    </div>
+</section>
+<footer class="my-footer py-5 bg-black">
+    <div class="container">
+        <p th:replace="~{/components/copyright}"></p>
+    </div>
+</footer><!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

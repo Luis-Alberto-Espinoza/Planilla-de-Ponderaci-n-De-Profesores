@@ -1,0 +1,140 @@
+	body, html {
+    height: 100%;
+	}
+
+	header.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(8rem + 72px);
+    padding-bottom: 7rem;
+    background: linear-gradient(0deg, rgb(0, 136, 136) 0, rgb(0, 255, 255) 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    margin-bottom: 25px;
+	}
+
+
+	body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    /*border: 1px solid red;*/
+	}
+
+	.logo-container {
+    flex-grow: 0.1;
+	}
+
+	.logo-container img {
+    max-width: 50px;
+    height: auto;
+	}
+
+	button{
+	padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+	}
+
+	button.ok {
+    background-color: #4CAF50; 
+    color: white;
+    
+    border: 2px solid #45a049;
+	}
+
+	button.boton-volver {
+    background-color: rgb(128, 255, 255);
+    color: #333;
+    border: 2px solid rgb(0, 225, 225);
+	}
+	
+	button {
+	padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+	}
+
+	button.ok {
+    background-color: #4CAF50;
+    color: white;
+    
+    border: 2px solid #45a049;
+	}
+
+	button.boton-volver {
+    background-color: rgb(128, 255, 255);
+    color: #333; /* Texto color negro */
+    border: 2px solid rgb(0, 225, 225);
+	}
+	
+	.my-footer {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 10px 0;
+	}
+	
+	#success-continue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+	}
+	
+	.busqueda-index {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+	}
+	
+	.tabla-index {
+    margin-bottom: 25px;
+	}
+	
+	.warning {
+    background-color: rgb(128, 255, 255);
+    color: #333;
+    padding: 5px 10px;
+    border: 2px solid rgb(0, 225, 225);
+    border-radius: 5px; 
+    margin: 5px; 
+    cursor: pointer;
+	}
+
+	.danger {
+    background-color: #DC143C;
+    color: white;
+    padding: 10px 15px;
+    border: 2px solid rgb(129, 12, 35);
+    border-radius: 5px;
+    cursor: pointer;
+	}
+	
+	.msj-borrado {
+    color: #dc3545;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+	.msj-creado {
+    color: rgb(0, 206, 0);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    .table-hover tbody tr:hover {
+    background-color: #b1ffff;
+}
+

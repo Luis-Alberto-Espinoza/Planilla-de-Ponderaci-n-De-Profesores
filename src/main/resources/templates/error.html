@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Planilla de Profesores - Lista de profesores</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+              rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="/css/one-page-wonder.min.css" rel="stylesheet">
+		<link href="/css/general-styles.css" rel="stylesheet">
+    </head>
+<body>
+	
+<nav th:replace="~{/components/main-nav}"></nav>
+
+<header class="masthead text-center text-white" style="height: 50vh; display: flex; flex-direction: column; justify-content: center;">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading mb-0">Planilla de Calificaciones</h1>
+            <h2 class="masthead-subheading mb-0">Trabajo Final Practica Profesionalizante.</h2>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="row align-items-center">
+            <h2 class="msj-borrado">Ha ocurrido un error.</h2>
+        </div>
+    </div>
+</section>
+<footer class="my-footer py-5 bg-black">
+    <div class="container">
+        <p th:replace="~{/components/copyright}"></p>
+    </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Otras funciones -->
+<script src="/js/funciones.js"></script>
+</body>
+</html>

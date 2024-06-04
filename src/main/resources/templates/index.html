@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Planilla de Profesores - Lista de profesores</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+              rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="/css/one-page-wonder.min.css" rel="stylesheet">
+        <link href="/css/general-styles.css" rel="stylesheet">
+    </head>
+<body>
+	
+<nav th:replace="~{/components/main-nav}"></nav>
+
+<header class="masthead text-center text-white" style="height: 50vh; display: flex; flex-direction: column; justify-content: center;">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-heading mb-0">Planilla de Calificaciones</h1>
+            <h2 class="masthead-subheading mb-0">Trabajo Final Practica Profesionalizante.</h2>
+        </div>
+    </div>
+</header>
+<section>
+	<div class="d-flex justify-content-around busqueda-index">
+	    <div class="text-center">
+	        <h3>Buscar por ID</h3>
+	        <form action="/profesor" method="POST">
+	            <input id="campoBusquedaPorID" type="number" class="form-control" name="id" min="1"/>
+	            <br/>
+	            <button id="botonBuscarPorID" type="submit" class="btn btn-primary mt-2 ok">Buscar</button>
+	            <br/>
+	        </form>
+	    </div>
+	    <div class="text-center">
+	        <h3>Buscar por DNI</h3>
+	        <form action="/profesor" method="POST">
+	            <input id="campoBusquedaPorDNI" type="number" class="form-control" name="dni" min="0"/>
+	            <br/>
+	            <button id="botonBuscarPorDNI" type="submit" class="btn btn-primary mt-2 ok">Buscar</button>
+	            <br/>
+	        </form>
+	    </div>
+    </div>
+    <div class="container tabla-index">
+        <div class="row align-items-center">
+            <p> Lista de Profesores </p>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">APELLIDO</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">DIRECCION</th>
+                    <th scope="col">TELEFONO</th>
+                    <th scope="col">PUNTOS ACUMULADOS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="elemento : ${profesores}">
+                    <td scope="row" th:text="${elemento.profesor.id}">
+                    <td scope="row" th:text="${elemento.profesor.nombre}">
+                    <td scope="row" th:text="${elemento.profesor.apellido}">
+                    <td scope="row" th:text="${elemento.profesor.documento}">
+                    <td scope="row" th:text="${elemento.profesor.direccion}">
+                    <td scope="row" th:text="${elemento.profesor.telefono}">
+                    <td scope="row" th:text="${elemento.totalAcumulado}">
+                    <td>
+                        <form action="/profesor" method="POST">
+                            <input type="hidden" name="id" th:value="${elemento.profesor.id}">
+                            <button type="submit" class="btn btn-primary mt-2 ok">Ver Registro</button>
+                        </form>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{/components/footer}"></footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Otras funciones -->
+<script src="/js/funciones.js"></script>
+</body>
+</html>
