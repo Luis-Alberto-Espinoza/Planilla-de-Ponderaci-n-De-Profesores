@@ -8,7 +8,7 @@ public class PuntajeXCategoriaValidado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private double puntajeValidado;
+    private float puntajeValidado;
 
     @ManyToOne
     private Profesor profesor;
@@ -19,7 +19,7 @@ public class PuntajeXCategoriaValidado {
     public PuntajeXCategoriaValidado() {
     }
 
-    public PuntajeXCategoriaValidado(Integer id, double puntajeValidado, Profesor profesor, Categoria categoria) {
+    public PuntajeXCategoriaValidado(Integer id, float puntajeValidado, Profesor profesor, Categoria categoria) {
         this.id = id;
         this.puntajeValidado = puntajeValidado;
         this.profesor = profesor;
@@ -34,11 +34,11 @@ public class PuntajeXCategoriaValidado {
         this.id = id;
     }
 
-    public double getPuntajeValidado() {
+    public float getPuntajeValidado() {
         return puntajeValidado;
     }
 
-    public void setPuntajeValidado(double puntajeValidado) {
+    public void setPuntajeValidado(float puntajeValidado) {
         this.puntajeValidado = puntajeValidado;
     }
 

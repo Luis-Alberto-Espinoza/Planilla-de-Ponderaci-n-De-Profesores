@@ -15,7 +15,7 @@ import java.util.*;
 
 @Controller
 @RequestMapping("")
-public class InicioController {
+public class WebController {
 
     @Autowired
     IProfesorService profesorService;
@@ -227,12 +227,12 @@ public class InicioController {
 
         if (existingRecord != null) {
             // Actualizar el registro existente
-            existingRecord.setPuntajeValidado(Double.parseDouble(totalValidado));
+            existingRecord.setPuntajeValidado(Float.parseFloat(totalValidado));
             puntajeXCategoriaValidadoService.save(existingRecord);
         } else {
             // Crear un nuevo registro
             PuntajeXCategoriaValidado nuevoRegistro = new PuntajeXCategoriaValidado();
-            nuevoRegistro.setPuntajeValidado(Double.parseDouble(totalValidado));
+            nuevoRegistro.setPuntajeValidado(Float.parseFloat(totalValidado));
             nuevoRegistro.setCategoria(categoria);
             nuevoRegistro.setProfesor(profesor);
             puntajeXCategoriaValidadoService.save(nuevoRegistro);
@@ -247,7 +247,7 @@ public class InicioController {
         double sumador = 0;
         for (int i = 0; i < asignados.size(); i++) {
             PuntajeActividad puntajeActividad = puntajeActividadService.obtenerPuntajeActividad(puntajesActividad, actividades.get(i));
-            puntajeActividad.setPuntaje((asignados.get(i)).isEmpty() ? 0 : Double.parseDouble(asignados.get(i).trim()));
+            puntajeActividad.setPuntaje((asignados.get(i)).isEmpty() ? 0 : Float.parseFloat(asignados.get(i).trim()));
             puntajeActividad.setProfesor(profesor);
             puntajeActividad.setActividad(actividades.get(i));
             sumador = sumador + puntajeActividad.getPuntaje();

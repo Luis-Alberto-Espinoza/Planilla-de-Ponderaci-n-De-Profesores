@@ -16,7 +16,7 @@ public class Actividad {
     private Integer id;
 
     private String nombre;
-    private double puntuacion;
+    private float puntuacion;
     @ManyToOne
     private Categoria categoria;
 
@@ -49,11 +49,11 @@ public class Actividad {
         this.nombre = nombre;
     }
 
-    public double getPuntuacion() {
+    public float getPuntuacion() {
         return puntuacion;
     }
 
-    public void setPuntuacion(int puntuacion) {
+    public void setPuntuacion(float puntuacion) {
         this.puntuacion = puntuacion;
     }
 
