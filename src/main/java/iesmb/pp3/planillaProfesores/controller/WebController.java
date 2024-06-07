@@ -280,9 +280,5 @@ public class WebController {
         model.addAttribute("strCategoriasSeleccionadas", strCategoriasSeleccionadas);
         return "continuar";
     }
-    
-    @GetMapping("/error")
-    public String redirigirError(ModelMap model) {
-        return "error";
-    }
+
 }
