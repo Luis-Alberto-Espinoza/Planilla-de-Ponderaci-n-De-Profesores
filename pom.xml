@@ -17,7 +17,7 @@
 		<java.version>17</java.version>
 		<spring.boot.version>3.1.4</spring.boot.version>
 		<logback.version>1.4.12</logback.version>
-		<tomcat.version>10.1.24</tomcat.version>
+		<tomcat.version>10.1.35</tomcat.version>
 		<mysql.version>8.2.0</mysql.version>
 		<thymeleaf.version>3.1.0.M2</thymeleaf.version>
 		<json-path.version>2.9.0</json-path.version>
