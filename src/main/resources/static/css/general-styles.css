@@ -1,12 +1,12 @@
-	body, html {
+	html {
     height: 100%;
 	}
 
 	header.masthead {
     position: relative;
     overflow: hidden;
-    padding-top: calc(8rem + 72px);
-    padding-bottom: 7rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     background: linear-gradient(0deg, rgb(0, 136, 136) 0, rgb(0, 255, 255) 100%);
     background-repeat: no-repeat;
     background-position: center center;
@@ -15,11 +15,30 @@
     margin-bottom: 25px;
 	}
 
+	/* Encabezado chico para las paginas internas */
+	header.masthead.masthead-sm {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+	}
 
+	/* El titulo se achica con la pantalla en vez de cortarse */
+	header.masthead .masthead-content .masthead-heading {
+    font-size: clamp(1.75rem, 8vw, 6rem);
+    overflow-wrap: break-word;
+	}
+
+	header.masthead .masthead-content .masthead-subheading {
+    font-size: clamp(1.5rem, 4vw, 4rem);
+	}
+
+
+	/* Navbar sticky arriba y footer siempre al final, sin tapar el contenido */
 	body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     /*border: 1px solid red;*/
 	}
 
@@ -72,13 +91,22 @@
     border: 2px solid rgb(0, 225, 225);
 	}
 	
+	body > * {
+    flex-shrink: 0;
+	}
+
+	body > footer {
+    margin-top: auto;
+	}
+
+	/* Color solido: antes era semitransparente y tomaba el color del encabezado de abajo */
+	.navbar-custom {
+    background-color: rgb(0, 77, 77);
+	}
+
 	.my-footer {
-	position: fixed;
-    bottom: 0;
-    width: 100%;
     background-color: black;
     text-align: center;
-    padding: 10px 0;
 	}
 	
 	#success-continue {

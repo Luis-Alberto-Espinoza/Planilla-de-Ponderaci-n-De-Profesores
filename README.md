@@ -11,12 +11,55 @@ El proyecto debe incluir una página web que esté conectada a una base de datos
 
 ## **Solución Propuesta**
 
-El proyecto se ha desarrollado principalmente en **Java** versión 17 con **Maven**, utilizando **Spring Boot** como marco principal. Además, se han incorporado otros lenguajes y herramientas para diversas funcionalidades:
+El proyecto se ha desarrollado principalmente en **Java** versión 17 con **Maven**, utilizando **Spring Boot** 3.5 como marco principal (con Tomcat embebido 10.1.60) y **MySQL** como base de datos. Además, se han incorporado otros lenguajes y herramientas para diversas funcionalidades:
 
 - **SQL**: Para la gestión y consultas necesarias que afectan a la base de datos.
 - **HTML**: Con la ayuda de *Thymeleaf* para crear las vistas necesarias en la página web del proyecto.
 - **JavaScript**: Implementado para la manipulación de las vistas, incluyendo validaciones y modificaciones de estilos.
 - **CSS**: Junto con *Bootstrap*, se utilizó para estilizar las distintas páginas web del proyecto.
+
+## **Cómo ejecutar el proyecto**
+
+### Requisitos
+
+- **Java 17** o superior.
+- **MySQL** con una base de datos ya creada (las tablas las crea la aplicación al iniciar).
+- No hace falta instalar Maven: el proyecto incluye el wrapper `mvnw`.
+
+### Pasos
+
+1. Crear la base de datos en MySQL (el nombre es a elección):
+
+   ```sql
+   CREATE DATABASE planilla_ponderacion;
+   ```
+
+2. Definir las variables de entorno con los datos de conexión:
+
+   ```bash
+   export NAME_DATA_BASE=planilla_ponderacion
+   export MYSQL_USSER=tu_usuario
+   export MYSQL_PASSWORD=tu_contraseña
+   ```
+
+3. Iniciar la aplicación:
+
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+
+4. Abrir en el navegador: **http://localhost:9000**
+
+Al iniciar por primera vez, la clase `DataLoader` carga automáticamente las categorías, las actividades y algunos profesores de prueba (solo si las tablas están vacías).
+
+### Generar el ejecutable (.jar)
+
+```bash
+./mvnw package
+java -jar target/planilla_ponderacion-0.0.1-SNAPSHOT.jar
+```
+
+La configuración de conexión está en `src/main/resources/application.properties`.
 
 ## **Arquitectura**
 
@@ -24,9 +67,9 @@ El sistema se basa en el patrón de arquitectura **MVC** (Modelo-Vista-Controlad
 
 ### **Modelo (Model)**
 
-- **Entidad**: La carpeta `entidad` alberga las clases que representan las entidades del modelo de datos. Estas clases pueden ser mapeadas directamente a tablas en la base de datos utilizando JPA (Java Persistence API).
+- **Entidad**: La carpeta `entity` alberga las clases que representan las entidades del modelo de datos. Estas clases pueden ser mapeadas directamente a tablas en la base de datos utilizando JPA (Java Persistence API).
 
-- **JPA**: La carpeta `jpa` contiene clases y configuraciones relacionadas con JPA, facilitando la persistencia y manipulación de datos en la base de datos.
+- **Repositorio**: La carpeta `repository` contiene las interfaces de Spring Data JPA, facilitando la persistencia y manipulación de datos en la base de datos.
 
 ### **Vista (Templates)**
 
@@ -34,11 +77,11 @@ La interfaz de usuario se encuentra en la carpeta `templates`. Aquí, los archiv
 
 ### **Controlador (Controller)**
 
-La lógica de control se organiza en la carpeta `controlador`. Aquí, las clases Java actúan como controladores, gestionando las solicitudes del usuario y coordinando la interacción entre el modelo y la vista.
+La lógica de control se organiza en la carpeta `controller`. Aquí, las clases Java actúan como controladores, gestionando las solicitudes del usuario y coordinando la interacción entre el modelo y la vista.
 
 ### **Servicio (Service)**
 
-La carpeta `servicio` contiene interfaces y clases que encapsulan la lógica de negocio de la aplicación. Estas clases pueden ser llamadas por los controladores para realizar operaciones específicas en el modelo.
+La carpeta `service` contiene las interfaces que encapsulan la lógica de negocio de la aplicación, y la subcarpeta `service/jpa` sus implementaciones. Estas clases pueden ser llamadas por los controladores para realizar operaciones específicas en el modelo.
 
 ## **Diagrama de Clases**
 
